@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Recommendations</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('pictures/background.jpg'); /* Replace 'background_image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure background covers entire viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for form */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        label, input, button {
+            display: block;
+            margin: 10px auto;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Game Recommendations!</h1>
+        <form action="/recommendations" method="post">
+            <label for="game_title">Enter a game title (The search is sensitive and requires exact spelling of the game, must include characters like : and -) :</label>
+            <input type="text" id="game_title" name="game_title">
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
+</body>
+</html>

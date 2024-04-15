@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        p {
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% if recommendations %}
+        <h1>Recommendations for "{{ game_title }}"</h1>
+        <ul>
+            {% for recommendation in recommendations %}
+                <li><a href="{{ recommendation.url }}">{{ recommendation.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>The game "{{ game_title }}" is not in the database. Please check the spelling or try another game.</p>
+    {% endif %}
+</body>
+</html>
