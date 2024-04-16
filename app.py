@@ -42,7 +42,7 @@ def recommend_game(game_title, k=10):
         
         # let's say input is call of duty, game was recommending different call of duty's, 
         # so I need more k's so I can eliminate the ones with similar names in my list if needed, and still get 10 recs.
-        n_neighbors = max(2 * k, 100)  
+        n_neighbors = max(10 * k, 100)  
         
         # find the nearest neighbors
         distances, indices = nn_model.kneighbors(input_features, n_neighbors=n_neighbors)
@@ -67,11 +67,10 @@ def recommend_game(game_title, k=10):
         return recommended_games
     
     except IndexError:
-        # Handle the case when the game title is not found in the database
+        # handle the case when the game title is not found in the database
         return None
 
 
-# Routes
 @app.route('/')
 def home():
     return render_template('index.html')
